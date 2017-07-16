@@ -30,7 +30,7 @@
   "dependencies": {
     "deep-equal": "^1.0.1",
     "object-assign": "^4.0.1",
-    "preact-side-effect": "^1.2.0"
+    "preact-side-effect": "^1.3.0"
   },
   "peerDependencies": {
     "preact": ">=7.1.0"
