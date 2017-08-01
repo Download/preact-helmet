@@ -1,15 +1,17 @@
 # Preact Helmet
 ## A document head manager for Preact
 
-> This project is a port of [react-helmet](https://github.com/nfl/react-helmet) 
-to [Preact](https://preactjs.com), the 3kB lightweight React alternative. 
+> This project is a port of [react-helmet](https://github.com/nfl/react-helmet)
+to [Preact](https://preactjs.com), the 3kB lightweight React alternative.
+
+<img align="right" height="200" src="https://raw.githubusercontent.com/download/preact-helmet/master/logo.png" />
 
 [![npm Version](https://img.shields.io/npm/v/preact-helmet.svg?style=flat-square)](https://www.npmjs.org/package/preact-helmet)
 [![Build Status](https://img.shields.io/travis/Download/preact-helmet/master.svg?style=flat-square)](https://travis-ci.org/Download/preact-helmet)
 [![Dependency Status](https://img.shields.io/david/Download/preact-helmet.svg?style=flat-square)](https://david-dm.org/Download/preact-helmet)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-This Preact component will manage all of your changes to the document head with support 
+This Preact component will manage all of your changes to the document head with support
 for document title, meta, link, style, script, noscript, and base tags.
 
 Inspired by:
@@ -105,7 +107,7 @@ npm install --save preact-helmet
 ```
 
 ## Server Usage
-To use on the server, call `rewind()` after using `render` from `preact-render-to-string` 
+To use on the server, call `rewind()` after using `render` from `preact-render-to-string`
 to get the head data for use in your prerender.
 
 Because this component keeps track of mounted instances, **you have to make sure to call `rewind` on server**, or you'll get a memory leak.
@@ -146,8 +148,8 @@ const html = `
 - `noscript`
 - `style`
 
-Each property contains `toComponent()` and `toString()` methods. Use whichever is appropriate 
-for your environment. For htmlAttributes, use the JSX spread operator on the object returned 
+Each property contains `toComponent()` and `toString()` methods. Use whichever is appropriate
+for your environment. For htmlAttributes, use the JSX spread operator on the object returned
 by `toComponent()`. E.g:
 
 ### As string output
@@ -170,7 +172,7 @@ const html = `
 ```
 
 ### As Preact components
-If you are doing server side rendering with Preact, it may be easier to render the 
+If you are doing server side rendering with Preact, it may be easier to render the
 document template with Preact as well:
 
 ```javascript
