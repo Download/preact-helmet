@@ -1637,14 +1637,6 @@ describe("Helmet", () => {
             expect(spy.callCount).to.equal(1);
         });
 
-/*
-        TODO this test is disabled because I could not get it to pass...
-        It seems that componentWillUnmount is called at a slightly different
-        moment with Preact than with React but I think the difference is
-        academic and the only reason this test fails is because we do a bit weird
-        stuff in here with switching canUseDom on and off etc...
-        SEE https://github.com/developit/preact/issues/534
-
         it("will only add new tags and will preserve tags when rendering additional Helmet instances", () => {
             const spy = sinon.spy();
             let addedTags;
@@ -1665,10 +1657,10 @@ describe("Helmet", () => {
 
             expect(addedTags).to.have.property("metaTags");
             expect(addedTags.metaTags).to.have.deep.property("[0]");
-            expect(addedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="Test description" ${HELMET_ATTRIBUTE}>`);
+            expect(addedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="Test description" ${HELMET_ATTRIBUTE}="true">`);
             expect(addedTags).to.have.property("linkTags");
             expect(addedTags.linkTags).to.have.deep.property("[0]");
-            expect(addedTags.linkTags[0].outerHTML).to.equal(`<link href="http://localhost/style.css" rel="stylesheet" type="text/css" ${HELMET_ATTRIBUTE}>`);
+            expect(addedTags.linkTags[0].outerHTML).to.equal(`<link href="http://localhost/style.css" rel="stylesheet" type="text/css" ${HELMET_ATTRIBUTE}="true">`);
             expect(removedTags).to.be.empty;
 
             // Re-rendering will pass new props to an already mounted Helmet
@@ -1690,16 +1682,16 @@ describe("Helmet", () => {
 
             expect(addedTags).to.have.property("metaTags");
             expect(addedTags.metaTags).to.have.deep.property("[0]");
-            expect(addedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="New description" ${HELMET_ATTRIBUTE}>`);
+            expect(addedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="New description" ${HELMET_ATTRIBUTE}="true">`);
             expect(addedTags).to.have.property("linkTags");
             expect(addedTags.linkTags).to.have.deep.property("[0]");
-            expect(addedTags.linkTags[0].outerHTML).to.equal(`<link href="http://localhost/style2.css" rel="stylesheet" type="text/css" ${HELMET_ATTRIBUTE}>`);
+            expect(addedTags.linkTags[0].outerHTML).to.equal(`<link href="http://localhost/style2.css" rel="stylesheet" type="text/css" ${HELMET_ATTRIBUTE}="true">`);
             expect(removedTags).to.have.property("metaTags");
             expect(removedTags.metaTags).to.have.deep.property("[0]");
-            expect(removedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="Test description" ${HELMET_ATTRIBUTE}>`);
+            expect(removedTags.metaTags[0].outerHTML).to.equal(`<meta name="description" content="Test description" ${HELMET_ATTRIBUTE}="true">`);
             expect(removedTags).to.not.have.property("linkTags");
         });
-*/
+
         it("can not nest Helmets", () => {
             child = render(
                 <Helmet
