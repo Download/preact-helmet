@@ -1,6 +1,6 @@
 /// <reference types="preact" />
 
-import * as preact from 'preact';
+import preact from 'preact';
 
 declare class PreactHelmet extends preact.Component<
     PreactHelmet.HelmetProps,
